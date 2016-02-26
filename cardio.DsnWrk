@@ -2,3 +2,5 @@
 Version=1.0
 [Project1]
 ProjectPath=cardio.PrjPcb
+[Project2]
+ProjectPath=Control\control.PrjPcb
