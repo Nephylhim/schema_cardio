@@ -1,0 +1,30 @@
+Bill of Material for 
+On 29/02/2016 at 15:25:53
+
+ Comment             Pattern     Quantity  Components
+------------------------------------------------------------------------------
+ 100                 axial-0.4        1    R?                           Resistor             
+ 1K                  axial-0.4        2    R?, R?                       Resistor             
+ 1K                  VR-3386F-T       1    RV?                          TRIMMER PRECISION POTENTIOMETER 
+ 1M                  axial-0.4        1    R?                           Resistor             
+ 1N4148              diode-0.4        4    D?, D?, D?, D?               High Conductance Fast Diode 
+ 2.2K                axial-0.4        1    R?                           Resistor             
+ 2.2M                axial-0.4        1    R?                           Resistor             
+ 200                 axial-0.4        1    R?                           Resistor             
+ 200K                axial-0.4        1    R?                           Resistor             
+ 2N7000              NMOS-TO92        1    Q?                           N-channel Enhancement Mode Field-effect Transistor 
+ 3.3K                axial-0.4        1    R?                           Resistor             
+ 300K                axial-0.4        1    R?                           Resistor             
+ 390K                axial-0.4        2    R?, R?                       Resistor             
+ 4.7M                axial-0.4        3    R?, R?, R?                   Resistor             
+ 56K                 axial-0.4        2    R?, R?                       Resistor             
+ 6.8M                axial-0.4        1    R?                           Resistor             
+ 82                  axial-0.4        1    R?                           Resistor             
+ ADS7841PB           DIP-16           1    U?                           Analog to Digital converter 
+ Cap                 rad-0.2         16    C?, C?, C?, C?, C?, C?, C?   Capacitor            
+                                           C?, C?, C?, C?, C?, C?, C?
+                                           C?, C?
+ CAPTEUR-CARDIO      KK-1X4M          2    J?, J?                       CAPTEUR CARDIO       
+ Jumper              JMP2-0.1         2    W?, W?                       Jumper Wire          
+ JUMPER-INV          JMP3-INV-0.1     1    JMP?                         JUMPER INVERSEUR HE14 MALE 3 cts 
+ TL074CN             dip-14           4    U?, U?, U?, U?               Low-Noise JFET-Input Operational Amplifier 
