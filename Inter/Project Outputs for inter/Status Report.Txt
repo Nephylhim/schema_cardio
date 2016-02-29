@@ -1,9 +1,11 @@
-Output: Bill of Materials
-Type  : BOM
+Output: Simple BOM
+Type  : SimpleBOM
 From  : Variant [[No Variations]] of Project [inter.PrjPcb]
+   Generated File[inter.BOM]
+   Generated File[inter.CSV]
 
 
-Files Generated   : 0
+Files Generated   : 2
 Documents Printed : 0
 
-Finished Output Generation At 16:50:25 On 29/02/2016
+Finished Output Generation At 16:51:50 On 29/02/2016
