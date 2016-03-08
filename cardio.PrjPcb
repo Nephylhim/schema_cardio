@@ -123,6 +123,10 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=QJDWCNNM
 
+[GeneratedDocument1]
+DocumentPath=Project Outputs for cardio\cardio.NET
+DItemRevisionGUID=
+
 [Configuration1]
 Name=Default Configuration
 ParameterCount=0
