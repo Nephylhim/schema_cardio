@@ -1,9 +1,10 @@
-Output: Bill of Materials
-Type  : BOM
-From  : Variant [[No Variations]] of Project [cardio.PrjPcb]
+Output: Protel
+Type  : ProtelNetlist
+From  : Project [cardio.PrjPcb]
+   Generated File[cardio.NET]
 
 
-Files Generated   : 0
+Files Generated   : 1
 Documents Printed : 0
 
-Finished Output Generation At 17:56:07 On 29/02/2016
+Finished Output Generation At 11:52:53 On 08/03/2016
