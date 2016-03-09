@@ -1,0 +1,408 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD15\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">09/03/2016</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">17:19:24</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc" class="file"><acronym title="C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc">C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">20</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+</table>
+</td>
+</table><a name="IDZ4ASVPQMMCHGMZNRGCRDTKD4DEAUCDH1VFPYUGCQU1X1DAEKMNDC"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDLOLWXV1WHUKRBTQEAROJZXQ5RF5C4DHHD1TOIUI4MPDECARNQMVM">Drilled SMT Pads found</a></td>
+<td class="column2">20</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">20</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDGOV0EZLXY1GPEVEPOGAYAIKM0IB01LZIK1YKP4EMT0RSUZ0FIIXP">Width Constraint (Min=20mil) (Max=40mil) (Preferred=40mil) (InNet('3V3'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTGFN1T4XABIMIUTGMHUBOXOTHLQVA43XRD44XFDIJYQXSNSYBS5K">Width Constraint (Min=20mil) (Max=40mil) (Preferred=40mil) (InNet('1V5'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDZKDGHJDXSWU2KT5ZVUNRJR3CFIV4GHUUT1TMXHE50P2HIKLLCGID">Width Constraint (Min=20mil) (Max=40mil) (Preferred=40mil) (InNet('-12V'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDQ1ZONKD15H2RJ0GCZTI54AEV3KNLIA0KMDRE4EN1D41I1KGEXVMJ">Width Constraint (Min=20mil) (Max=40mil) (Preferred=40mil) (InNet('+12V'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJIG2ZYHZZTVEJJZKUYUUHI2TQPG0JQAPHJVRH1DTZCOO2OXWQKOP">Width Constraint (Min=20mil) (Max=40mil) (Preferred=40mil) (InNet('GND'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDZ45R2FI3DVLE5NTRU5FUGU1OEJUJZCLGRA0QZMNY23SCKN315O">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDKAD4WCG3N0ROMWVX0J41SQ1FTN0ZP3OTXJMHV1LCU45UZQUDTHI">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDP1JQONBF1VWZIHC1XSMQSEHVLAGFB3YNRRZAKDP2EMHEWHVEKML">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDFP4Z54STS5KBWHOOHFCMFLSSOXATQP05HBI3OJQS5DCVMKIPNCG">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTYSUZJTQOVIWB0QAPKIHY4FHE3XKXMWJBJZUGLBOHLOCLCQNSIM">Hole To Hole Clearance (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDZ5MINHWRD045BOL05XWEARA4SNGRCSTVAUJ0COJZGLCIGFEOIFPB">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDDY11EX5K5FNMMV0MPYXCMAKUHN4L5V5AFR3U2P1XME4CYQ50OSC">Silk primitive without silk layer</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDBJFTKETMBLJFDRW4DBW5A1Z14PM3UM1CTTVOLWCCEJE3JVQDMPYJ">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDGNNSROPWUZP3JVET23G11AARZHMX50UVIOCO2TF324UM5PWDY3AL">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDXHIPZQA3RQMIKFBONNS35K044NTE1LABOXOTRCGZ3MFW4304TOBI">Width Constraint (Min=20mil) (Max=20mil) (Preferred=20mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDHEOGNYPQULM3HF5IL03BNCU1LO5AWLF2NFNQTNBMJFI5J3U4IX">Clearance Constraint (Gap=20mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID0JZ2LEHQAWT1ODNWBQZ4VPOMSO0OIJLDE20GBAMMIO511W2QK0LK">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><a name="IDEZNFNGQRGNIGNH4BOU1UAERVYP5BK1S0PWOGLZKMGIFRSCJ1QYIE"><h2>Warnings</h2></a><a name="IDLOLWXV1WHUKRBTQEAROJZXQ5RF5C4DHHD1TOIUI4MPDECARNQMVM"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="warning">Drilled SMT Pads found</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8456mil|Location2.X=8544mil|Location1.Y=5506mil|Location2.Y=5594mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8456mil|Location2.X=8544mil|Location1.Y=5506mil|Location2.Y=5594mil|Absolute=True">Pad P1-1(8500mil,5550mil)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8356mil|Location2.X=8444mil|Location1.Y=5506mil|Location2.Y=5594mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8356mil|Location2.X=8444mil|Location1.Y=5506mil|Location2.Y=5594mil|Absolute=True">Pad P1-2(8400mil,5550mil)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8456mil|Location2.X=8544mil|Location1.Y=5606mil|Location2.Y=5694mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8456mil|Location2.X=8544mil|Location1.Y=5606mil|Location2.Y=5694mil|Absolute=True">Pad P1-3(8500mil,5650mil)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8356mil|Location2.X=8444mil|Location1.Y=5606mil|Location2.Y=5694mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8356mil|Location2.X=8444mil|Location1.Y=5606mil|Location2.Y=5694mil|Absolute=True">Pad P1-4(8400mil,5650mil)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8456mil|Location2.X=8544mil|Location1.Y=5706mil|Location2.Y=5794mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8456mil|Location2.X=8544mil|Location1.Y=5706mil|Location2.Y=5794mil|Absolute=True">Pad P1-5(8500mil,5750mil)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8356mil|Location2.X=8444mil|Location1.Y=5706mil|Location2.Y=5794mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8356mil|Location2.X=8444mil|Location1.Y=5706mil|Location2.Y=5794mil|Absolute=True">Pad P1-6(8400mil,5750mil)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8456mil|Location2.X=8544mil|Location1.Y=5806mil|Location2.Y=5894mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8456mil|Location2.X=8544mil|Location1.Y=5806mil|Location2.Y=5894mil|Absolute=True">Pad P1-7(8500mil,5850mil)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8356mil|Location2.X=8444mil|Location1.Y=5806mil|Location2.Y=5894mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8356mil|Location2.X=8444mil|Location1.Y=5806mil|Location2.Y=5894mil|Absolute=True">Pad P1-8(8400mil,5850mil)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8456mil|Location2.X=8544mil|Location1.Y=5906mil|Location2.Y=5994mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8456mil|Location2.X=8544mil|Location1.Y=5906mil|Location2.Y=5994mil|Absolute=True">Pad P1-9(8500mil,5950mil)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8356mil|Location2.X=8444mil|Location1.Y=5906mil|Location2.Y=5994mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8356mil|Location2.X=8444mil|Location1.Y=5906mil|Location2.Y=5994mil|Absolute=True">Pad P1-10(8400mil,5950mil)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3556mil|Location2.X=3644mil|Location1.Y=5256mil|Location2.Y=5344mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3556mil|Location2.X=3644mil|Location1.Y=5256mil|Location2.Y=5344mil|Absolute=True">Pad JMP1-1(3600mil,5300mil)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3456mil|Location2.X=3544mil|Location1.Y=5256mil|Location2.Y=5344mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3456mil|Location2.X=3544mil|Location1.Y=5256mil|Location2.Y=5344mil|Absolute=True">Pad JMP1-2(3500mil,5300mil)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3356mil|Location2.X=3444mil|Location1.Y=5256mil|Location2.Y=5344mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3356mil|Location2.X=3444mil|Location1.Y=5256mil|Location2.Y=5344mil|Absolute=True">Pad JMP1-3(3400mil,5300mil)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3056mil|Location2.X=3144mil|Location1.Y=3556mil|Location2.Y=3644mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3056mil|Location2.X=3144mil|Location1.Y=3556mil|Location2.Y=3644mil|Absolute=True">Pad W2-1(3100mil,3600mil)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2956mil|Location2.X=3044mil|Location1.Y=3556mil|Location2.Y=3644mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2956mil|Location2.X=3044mil|Location1.Y=3556mil|Location2.Y=3644mil|Absolute=True">Pad W2-2(3000mil,3600mil)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2156mil|Location2.X=2244mil|Location1.Y=5256mil|Location2.Y=5344mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2156mil|Location2.X=2244mil|Location1.Y=5256mil|Location2.Y=5344mil|Absolute=True">Pad W1-1(2200mil,5300mil)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2256mil|Location2.X=2344mil|Location1.Y=5256mil|Location2.Y=5344mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2256mil|Location2.X=2344mil|Location1.Y=5256mil|Location2.Y=5344mil|Absolute=True">Pad W1-2(2300mil,5300mil)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3056mil|Location2.X=3144mil|Location1.Y=5556mil|Location2.Y=5644mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3056mil|Location2.X=3144mil|Location1.Y=5556mil|Location2.Y=5644mil|Absolute=True">Pad RV1-3(3100mil,5600mil)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3256mil|Location2.X=3344mil|Location1.Y=5656mil|Location2.Y=5744mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3256mil|Location2.X=3344mil|Location1.Y=5656mil|Location2.Y=5744mil|Absolute=True">Pad RV1-2(3300mil,5700mil)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3256mil|Location2.X=3344mil|Location1.Y=5456mil|Location2.Y=5544mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3256mil|Location2.X=3344mil|Location1.Y=5456mil|Location2.Y=5544mil|Absolute=True">Pad RV1-1(3300mil,5500mil)  Bottom Layer</acronym></a></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a href="dxpprocess://PCB:RunConvertDrilledSMTPadsToMultilayer?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;" class="callback"><acronym title="dxpprocess://PCB:RunConvertDrilledSMTPadsToMultilayer?document=C:\Users\skipper\OneDrive\Documents\ISEN\CIR3\projet_cir3-csi3\cardio\schema_cardio\cardio_pcb_gnd40.PcbDoc;viewname=PCBEditor;">Convert Found Drilled SMT Pads to MultiLayer Pads</acronym></a></body>
+</html>
