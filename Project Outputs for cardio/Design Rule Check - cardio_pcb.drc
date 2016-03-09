@@ -1,0 +1,81 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\Joseph\Documents\GitHub\schema_cardio\cardio_pcb.PcbDoc
+Date     : 09/03/2016
+Time     : 17:03:24
+
+WARNING: Drilled SMT Pads found
+   Pad JMP1-3(3300mil,5000mil)  Bottom Layer
+   Pad JMP1-2(3300mil,4900mil)  Bottom Layer
+   Pad JMP1-1(3300mil,4800mil)  Bottom Layer
+   Pad P1-1(3800mil,6000mil)  Bottom Layer
+   Pad P1-2(3800mil,6100mil)  Bottom Layer
+   Pad P1-3(3900mil,6000mil)  Bottom Layer
+   Pad P1-4(3900mil,6100mil)  Bottom Layer
+   Pad P1-5(4000mil,6000mil)  Bottom Layer
+   Pad P1-6(4000mil,6100mil)  Bottom Layer
+   Pad P1-7(4100mil,6000mil)  Bottom Layer
+   Pad P1-8(4100mil,6100mil)  Bottom Layer
+   Pad P1-9(4200mil,6000mil)  Bottom Layer
+   Pad P1-10(4200mil,6100mil)  Bottom Layer
+   Pad RV1-1(3600mil,5500mil)  Bottom Layer
+   Pad RV1-2(3800mil,5500mil)  Bottom Layer
+   Pad RV1-3(3700mil,5700mil)  Bottom Layer
+   Pad W1-2(2700mil,5100mil)  Bottom Layer
+   Pad W1-1(2600mil,5100mil)  Bottom Layer
+   Pad W2-2(3800mil,4900mil)  Bottom Layer
+   Pad W2-1(3700mil,4900mil)  Bottom Layer
+
+Processing Rule : Width Constraint (Min=20mil) (Max=40mil) (Preferred=40mil) (InNet('1V5'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=20mil) (Max=40mil) (Preferred=40mil) (InNet('3V3'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=20mil) (Max=40mil) (Preferred=40mil) (InNet('-12V'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=20mil) (Max=40mil) (Preferred=40mil) (InNet('+12V'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=20mil) (Max=40mil) (Preferred=40mil) (InNet('GND'))
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=20mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=20mil) (Max=20mil) (Preferred=20mil) (All)
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+Rule Violations :0
+
+Processing Rule : Silk primitive without silk layer
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=1mil) (Max=100mil) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+
+Violations Detected : 0
+Time Elapsed        : 00:00:00
