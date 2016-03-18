@@ -484,7 +484,7 @@ OutputDefault3=0
 Name=Fabrication Outputs
 Description=
 TargetPrinter=Imprimante salle 305 - Brother Laser Leg Type1 Class Driver
-PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
+PrinterOptions=Record=PrinterOptions|Copies=2|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 OutputType1=Board Stack Report
 OutputName1=Report Board Stack
 OutputDocumentPath1=

@@ -1,0 +1,9 @@
+Added Component: Designator=P1(HE10-2X5M)
+Added Pin To Net: NetName=NetP1_1 Pin=P1-1
+Added Pin To Net: NetName=GND Pin=P1-2
+Added Pin To Net: NetName=NetP1_3 Pin=P1-3
+Added Pin To Net: NetName=3V3 Pin=P1-4
+Added Pin To Net: NetName=NetP1_5 Pin=P1-5
+Added Pin To Net: NetName=NetP1_9 Pin=P1-9
+Added Pin To Net: NetName=GND Pin=P1-10
+Added Member To Class: ClassName=CONTROL Member=Component P1 MHDR2X5
